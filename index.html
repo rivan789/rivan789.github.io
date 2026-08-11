@@ -1,346 +1,682 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Burger King - Combo Hemat 20rb</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+    <title>Burger King - Combo Hemat 20rb</title>
 
-html {
-  scroll-behavior: smooth;
-}
+    <style>
+        /* =========================
+           RESET
+        ========================== */
 
-body {
-  margin: 0;
-  background: #080808;
-  color: white;
-  font-family: Arial, sans-serif;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-/* NAVBAR */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  height: 68px;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #080808;
-  border-bottom: 3px solid #b51e1e;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.logo {
-  font-weight: 900;
-  font-size: 24px;
-  color: #ffd84d;
-}
+        body {
+            margin: 0;
+            background: #080808;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  margin-left: 20px;
-}
 
-nav a:hover {
-  color: #ffd84d;
-}
+        /* =========================
+           HEADER / NAVBAR
+        ========================== */
 
-/* POSTER */
-.poster {
-  display: block;
-  width: 100%;
-  max-width: 1086px;
-  height: auto;
-  margin: auto;
-}
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
-/* PROMO */
-.promo {
-  text-align: center;
-  padding: 55px 20px;
-  background: linear-gradient(180deg, #090909, #210808);
-}
+            height: 68px;
+            padding: 0 24px;
 
-.promo h1 {
-  margin: 0 0 10px;
-  color: #ffd84d;
-  font-size: clamp(38px, 7vw, 60px);
-  text-transform: uppercase;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-.promo p {
-  font-size: 19px;
-  line-height: 1.5;
-  max-width: 650px;
-  margin: auto;
-}
+            background: #080808;
 
-.price {
-  font-size: 46px;
-  font-weight: 900;
-  color: #ffd84d;
-  margin: 20px 0 28px;
-}
+            border-bottom: 3px solid #b51e1e;
+        }
 
-.btn {
-  display: inline-block;
-  padding: 15px 28px;
-  border-radius: 10px;
-  background: #b51e1e;
-  color: white;
-  text-decoration: none;
-  font-weight: 900;
-  border: 2px solid #ffd84d;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffd84d;
+        }
 
-/* INFOGRAFIS */
-.infografis {
-  padding: 55px 7%;
-  background: #100606;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
 
-.infografis h2 {
-  text-align: center;
-  color: #ffd84d;
-  font-size: 38px;
-  margin: 0 0 10px;
-}
+            font-size: 15px;
+            font-weight: 700;
 
-.subtitle {
-  text-align: center;
-  color: #ddd;
-  margin: 0 auto 35px;
-  max-width: 650px;
-}
+            margin-left: 20px;
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  max-width: 1050px;
-  margin: auto;
-}
+            transition: 0.3s;
+        }
 
-.card {
-  background: #f9e9c4;
-  color: #641414;
-  border: 3px solid #b51e1e;
-  border-radius: 20px;
-  padding: 24px;
-  text-align: center;
-  box-shadow: 0 8px 25px #0008;
-}
+        nav a:hover {
+            color: #ffd84d;
+        }
 
-.art {
-  height: 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
 
-.card h3 {
-  font-size: 27px;
-  margin: 8px 0;
-  color: #a51d1d;
-}
+        /* =========================
+           POSTER
+        ========================== */
 
-.card p {
-  line-height: 1.5;
-  margin: 8px 0 0;
-  color: #351414;
-}
+        .poster-section {
+            width: 100%;
+            background: #080808;
 
-.badge {
-  display: inline-block;
-  background: #b51e1e;
-  color: white;
-  padding: 7px 14px;
-  border-radius: 20px;
-  font-weight: 800;
-  margin-top: 12px;
-}
+            display: flex;
+            justify-content: center;
+        }
 
-/* FOOTER */
-footer {
-  padding: 25px;
-  text-align: center;
-  background: #641414;
-  font-size: 14px;
-}
+        .poster {
+            display: block;
 
-/* RESPONSIVE */
-@media (max-width: 700px) {
-  nav {
-    display: none;
-  }
+            width: 100%;
+            max-width: 1086px;
 
-  .cards {
-    grid-template-columns: 1fr;
-  }
+            height: auto;
+        }
 
-  .infografis {
-    padding: 45px 20px;
-  }
-}
-</style>
+
+        /* =========================
+           PROMO
+        ========================== */
+
+        .promo {
+            text-align: center;
+
+            padding: 65px 20px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #090909,
+                    #210808
+                );
+        }
+
+        .promo h1 {
+            margin: 0 0 12px;
+
+            color: #ffd84d;
+
+            font-size: clamp(
+                38px,
+                7vw,
+                60px
+            );
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+        }
+
+        .promo p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #eeeeee;
+
+            font-size: 19px;
+
+            line-height: 1.5;
+        }
+
+        .price {
+            margin: 22px 0 30px;
+
+            color: #ffd84d;
+
+            font-size: 48px;
+
+            font-weight: 900;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background: #b51e1e;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 900;
+
+            border-radius: 10px;
+
+            border: 2px solid #ffd84d;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #d32929;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           INFOGRAFIS
+        ========================== */
+
+        .infografis {
+            padding: 60px 7%;
+
+            background: #100606;
+        }
+
+        .infografis h2 {
+            margin: 0 0 10px;
+
+            text-align: center;
+
+            color: #ffd84d;
+
+            font-size: 38px;
+        }
+
+        .subtitle {
+            max-width: 650px;
+
+            margin: 0 auto 40px;
+
+            text-align: center;
+
+            color: #dddddd;
+
+            font-size: 17px;
+        }
+
+        .cards {
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .card {
+            padding: 25px;
+
+            text-align: center;
+
+            background: #f9e9c4;
+
+            color: #641414;
+
+            border: 3px solid #b51e1e;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.5);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .art {
+            height: 170px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .icon {
+            font-size: 105px;
+
+            filter:
+                drop-shadow(
+                    0 8px 5px
+                    rgba(0, 0, 0, 0.35)
+                );
+        }
+
+        .card h3 {
+            margin: 10px 0;
+
+            color: #a51d1d;
+
+            font-size: 27px;
+        }
+
+        .card p {
+            margin: 10px 0;
+
+            color: #351414;
+
+            font-size: 16px;
+
+            line-height: 1.5;
+        }
+
+        .badge {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 7px 14px;
+
+            background: #b51e1e;
+
+            color: white;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           WHATSAPP
+        ========================== */
+
+        .whatsapp {
+            padding: 60px 20px;
+
+            text-align: center;
+
+            background: #090909;
+        }
+
+        .whatsapp h2 {
+            margin-bottom: 12px;
+
+            color: #ffd84d;
+
+            font-size: 36px;
+        }
+
+        .whatsapp p {
+            color: #eeeeee;
+
+            font-size: 18px;
+
+            line-height: 1.5;
+        }
+
+        .wa-btn {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 16px 30px;
+
+            background: #b51e1e;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+            border-radius: 10px;
+
+            border: 2px solid #ffd84d;
+
+            transition: 0.3s;
+        }
+
+        .wa-btn:hover {
+            background: #d32929;
+
+            transform: translateY(-2px);
+        }
+
+        .phone {
+            margin-top: 18px;
+
+            color: #ffd84d !important;
+
+            font-size: 18px !important;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 28px 20px;
+
+            text-align: center;
+
+            background: #641414;
+
+            color: white;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            header {
+                height: 62px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .infografis {
+                padding: 45px 20px;
+            }
+
+            .promo {
+                padding: 50px 20px;
+            }
+
+            .price {
+                font-size: 42px;
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
-<header>
-  <div class="logo">BURGER KING®</div>
 
-  <nav>
-    <a href="#promo">PROMO</a>
-    <a href="#infografis">MENU</a>
-  </nav>
-</header>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
+    <header>
 
-<!-- POSTER -->
-<section>
-  <img
-    class="poster"
-    src="poster-burger-king.png"
-    alt="Poster Burger King Combo Hemat 20rb"
-  >
-</section>
-
-
-<!-- PROMO -->
-<section class="promo" id="promo">
-
-  <h1>COMBO HEMAT</h1>
-
-  <p>
-    Lezat, juicy, dan mengenyangkan
-    dalam satu paket.
-  </p>
-
-  <div class="price">
-    Rp20.000
-  </div>
-
-  <a class="btn" href="#infografis">
-    LIHAT ISI COMBO
-  </a>
-
-</section>
-
-
-<!-- INFOGRAFIS -->
-<section class="infografis" id="infografis">
-
-  <h2>🍔 ISI COMBO</h2>
-
-  <p class="subtitle">
-    Tiga menu favorit dalam satu combo hemat.
-  </p>
-
-
-  <div class="cards">
-
-
-    <!-- BURGER -->
-    <article class="card">
-
-      <div class="art">
-
-        <div style="
-          font-size:110px;
-          filter:drop-shadow(0 8px 5px #0005);
-        ">
-          🍔
+        <div class="logo">
+            BURGER KING®
         </div>
 
-      </div>
+        <nav>
 
-      <h3>BURGER</h3>
+            <a href="#promo">
+                PROMO
+            </a>
 
-      <p>
-        Patty gurih dengan roti lembut,
-        sayuran, dan keju.
-      </p>
+            <a href="#infografis">
+                MENU
+            </a>
 
-      <span class="badge">
-        MENU UTAMA
-      </span>
+            <a href="#pesan">
+                PESAN
+            </a>
 
-    </article>
+        </nav>
+
+    </header>
 
 
-    <!-- KENTANG -->
-    <article class="card">
 
-      <div class="art">
+    <!-- =========================
+         POSTER
+    ========================== -->
 
-        <div style="
-          font-size:110px;
-          filter:drop-shadow(0 8px 5px #0005);
-        ">
-          🍟
+    <section class="poster-section">
+
+        <img
+            class="poster"
+            src="poster-burger-king.png"
+            alt="Poster Burger King Combo Hemat 20rb"
+        >
+
+    </section>
+
+
+
+    <!-- =========================
+         PROMO
+    ========================== -->
+
+    <section
+        class="promo"
+        id="promo"
+    >
+
+        <h1>
+            COMBO HEMAT
+        </h1>
+
+        <p>
+            Lezat, juicy, dan mengenyangkan
+            dalam satu paket.
+        </p>
+
+        <div class="price">
+            Rp20.000
         </div>
 
-      </div>
+        <a
+            class="btn"
+            href="#infografis"
+        >
+            LIHAT ISI COMBO
+        </a>
 
-      <h3>KENTANG</h3>
-
-      <p>
-        Kentang goreng renyah sebagai
-        teman burger favoritmu.
-      </p>
-
-      <span class="badge">
-        RENYAH
-      </span>
-
-    </article>
+    </section>
 
 
-    <!-- MINUMAN -->
-    <article class="card">
 
-      <div class="art">
+    <!-- =========================
+         INFOGRAFIS
+    ========================== -->
 
-        <div style="
-          font-size:110px;
-          filter:drop-shadow(0 8px 5px #0005);
-        ">
-          🥤
+    <section
+        class="infografis"
+        id="infografis"
+    >
+
+        <h2>
+            🍔 ISI COMBO
+        </h2>
+
+        <p class="subtitle">
+            Tiga menu favorit dalam satu
+            combo hemat.
+        </p>
+
+
+        <div class="cards">
+
+
+            <!-- BURGER -->
+
+            <article class="card">
+
+                <div class="art">
+
+                    <div class="icon">
+                        🍔
+                    </div>
+
+                </div>
+
+                <h3>
+                    BURGER
+                </h3>
+
+                <p>
+                    Patty gurih dengan
+                    roti lembut, sayuran,
+                    dan keju.
+                </p>
+
+                <span class="badge">
+                    MENU UTAMA
+                </span>
+
+            </article>
+
+
+
+            <!-- KENTANG -->
+
+            <article class="card">
+
+                <div class="art">
+
+                    <div class="icon">
+                        🍟
+                    </div>
+
+                </div>
+
+                <h3>
+                    KENTANG
+                </h3>
+
+                <p>
+                    Kentang goreng renyah
+                    sebagai teman burger
+                    favoritmu.
+                </p>
+
+                <span class="badge">
+                    RENYAH
+                </span>
+
+            </article>
+
+
+
+            <!-- MINUMAN SODA -->
+
+            <article class="card">
+
+                <div class="art">
+
+                    <div class="icon">
+                        🥤
+                    </div>
+
+                </div>
+
+                <h3>
+                    MINUMAN SODA
+                </h3>
+
+                <p>
+                    Minuman soda dingin
+                    dan menyegarkan untuk
+                    melengkapi combo.
+                </p>
+
+                <span class="badge">
+                    SODA DINGIN
+                </span>
+
+            </article>
+
+
         </div>
 
-      </div>
-
-      <h3>MINUMAN</h3>
-
-      <p>
-        Minuman dingin yang menyegarkan
-        untuk melengkapi combo.
-      </p>
-
-      <span class="badge">
-        SEGAR
-      </span>
-
-    </article>
+    </section>
 
 
-  </div>
 
-</section>
+    <!-- =========================
+         WHATSAPP
+    ========================== -->
+
+    <section
+        class="whatsapp"
+        id="pesan"
+    >
+
+        <h2>
+            Siap Pesan?
+        </h2>
+
+        <p>
+            Pesan Combo Hemat
+            Rp20.000 melalui WhatsApp.
+        </p>
 
 
-<footer>
-  © 2026 — Halaman demo iklan Burger King
-</footer>
+        <!-- TOMBOL WHATSAPP -->
+
+        <a
+            class="wa-btn"
+            href="https://wa.me/6283172741344?text=Halo%2C%20saya%20ingin%20pesan%20Combo%20Hemat%20Rp20.000"
+            target="_blank"
+            rel="noopener"
+        >
+
+            💬 PESAN VIA WHATSAPP
+
+        </a>
+
+
+        <!-- NOMOR -->
+
+        <p class="phone">
+            083172741344
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 — Halaman demo iklan Burger King
+
+    </footer>
+
 
 </body>
-</html>
+  </html>
